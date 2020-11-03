@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta charset="UTF-8" />
+		<title>Javascript</title>
+		<link rel="stylesheet" href="./css/style.css"/>	
+	</head>
+	<body>
+		<h2>Objetos Javascript</h2>
+		<p id="demo"></p>
+		<p id="demo2"></p>
+		<script>
+			/*var pessoa = {
+			nome: "John",
+			sobrenome : "Doe",
+			id	:5566,
+			nomeCompleto : function() {
+				return this.nome + "" + this.sobrenome;
+				}
+			};*/
+			
+			/*var pessoa = {
+			nome: "Lucas",
+			sobrenome : "Skywalker",
+			id:	55,
+			nomeCompleto : function() {
+				return this.nome +" "+ this.sobrenome;
+				}
+			};
+			document.getElementById("demo").innerHTML = "Nome:"+pessoa.nomeCompleto();*/
+			
+			/*var pessoa = {
+			nome: "Lucas",
+			sobrenome : "Skywalker",
+			id:	55,
+			nomeCompleto : function() {
+				return this.nome +" "+ this.sobrenome;
+				}
+			};
+			document.getElementById("demo").innerHTML = pessoa.nomeCompleto;*/
+			
+			function pessoa(nome, sobrenome) {
+				this.nome=nome;
+				this.sobrenome=sobrenome;
+				this.nomeCompleto = function() {
+					return this.nome + " " + this.sobrenome;
+				}
+			};
+			p1=new pessoa("Richard","Parker");
+			p2=new pessoa("James","Bond");
+			
+			document.getElementById("demo").innerHTML = "Nome:"+p1.nomeCompleto();
+			document.getElementById("demo2").innerHTML = "Nome:"+p2.nomeCompleto();
+		</script>
+	</body>
+</html>

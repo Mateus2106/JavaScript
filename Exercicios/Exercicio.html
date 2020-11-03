@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta charset="UTF-8" />
+		<title>Javascript</title>
+		<link rel="stylesheet" href="./css/style.css"/>	
+	</head>
+	<body>
+		<h2>Objetos do Javascript</h2>
+		<h3>Pessoas</h3>
+		<form onsubmit="registraPessoa(); return false">
+			<input type="text" name="nome" id="nome" value="" placeholder="Nome"/>
+		</form>
+		<form onsubmit="registraPessoa(); return false">
+			<input type="text" name="sobrenome" id="sobrenome" value="" placeholder="Sobrenome"/>
+		</form>
+		<form onsubmit="registraPessoa(); return false">
+			<input type="date" name="nome" id="dataNascimento" value="" placeholder="Data de Nascimento"/></br>
+			<input type="submit"/>
+		</form>
+		</hr>
+		<div id="resultado"></div>
+		<script>
+			var pessoas=new Array();
+			
+			function registraPessoa() {
+				pessoa=new Pessoa();
+				pessoa.nome=document.getElementById("nome").value;
+				document.getElementById("nome").value="";
+				pessoa.sobrenome=document.getElementById("sobrenome").value;
+				document.getElementById("sobrenome").value="";
+				pessoa.dataNascimento=document.getElementById("dataNascimento").value;
+				document.getElementById("dataNascimento").value="";
+				pessoas.push(pessoa);
+				exibeResultado();
+			}
+			
+			function exibeResultado() {
+				resultado="<ol>";
+				for(i=0;i<pessoas.length;i++) {
+					resultado +="<li>"+pessoas[i].nome+"</li>";
+					resultado +="<li>"+pessoas[i].sobrenome+"</li>";
+					resultado +="<li>"+pessoas[i].dataNascimento+"</li>";
+				}
+				resultado+="</ol>";
+				document.getElementById("resultado").innerHTML = resultado;
+			}
+			
+			function Pessoa() {
+				this.nome=null;
+				this.sobrenome=null;
+				this.dataNascimento=null;
+				this.nomeCompleto = function() {
+					return this.nome + " " + this.sobrenome;
+				}
+			}
+		</script>
+	</body>
+</html>

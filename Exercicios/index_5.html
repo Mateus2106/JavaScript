@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta charset="UTF-8" />
+		<title>Javascript</title>
+		<link rel="stylesheet" href="./css/style.css"/>
+		<script>
+			var nome=prompt("Digite seu nome:");valor1=prompt("Digite um valor:");valor2=prompt("Digite um valor:");
+			function Saudacoes(nome)
+			{
+				alert("Olá "+nome+", seja bem vindo. \nEspero que goste do nosso site.");
+				window.location.href="t";
+			}
+			function boasVindas()
+			{
+				alert("Olá, seja bem vindo. \nEspero que goste do nosso site.");			
+			}
+			function calculo(valor1,valor2)
+			{
+				total=valor1*valor2;
+				return total;
+			}
+			alert(calculo(valor1,valor2));
+			info=new Array();
+			for(i=0;i<5;i++)
+			{
+				nome=prompt("Digite seu nome:");
+				sobrenome=prompt("Digite seu sobrenome:");
+				dataNascimento=prompt("Digite sua data de nascimento:");
+				email=prompt("Digite seu email:");
+				info[i]={nome:nome,sobrenome:sobrenome,dataNascimento:dataNascimento,email:email};
+			}
+			var saida="";
+			for(i=0;i<5;i++)
+			{
+				saida += "_________________<br/>";
+				saida += "nome: "+info[i].nome+"</br>";
+				saida += "sobrenome: "+info[i].sobrenome+"</br>";
+				saida += "dataNascimento: "+info[i].dataNascimento+"</br>";
+				saida += "email: "+info[i].email+"</br>";
+			}
+			document.write(saida)
+		</script>
+	</head>
+	<body>
+		<input type="button" value="Mensagem de boas vindas" href="t" onclick="Saudacoes('Mateus')"/>
+		<a href="t" onclick="javascript:boasVindas()">Chamar a função</a>
+
+	</body>
+</html>

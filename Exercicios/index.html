@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta charset="UTF-8" />
+		<title>Javascript</title>
+		<link rel="stylesheet" href="./css/style.css"/>
+		<script>
+			var pais="Brasil",estado="MG",querMsg=confirm("Gostaria de receber uma mensagem de boas vindas?");
+			if(pais=="Brasil")
+			{
+				console.log("Olá povo brasileiro!");
+			}
+			switch(estado)
+			{
+				case "MG" : {
+					alert("Você mora em Minas Gerais.");
+					}break;
+				case "SP" : {
+					alert("Você mora em São Paulo.");
+					}break;
+				default : {
+					alert("Onde moras?");
+				}
+			}
+			alert("Curso Web - Aplicações web");
+			confirm("Você está cursando o curso: Aplicações web");
+			prompt("Que curso você está fazendo no momento?","");
+			if(querMsg)
+			{
+				var nome=prompt("Por favor, qual o seu nome?","");
+				if(nome!=null && nome!="")
+				{
+					alert("Olá " + nome + ", seja bem vindo.");
+				}
+			}
+			else
+			{
+				alert("Por que não quer a mensagem ;-;");
+			}
+		</script>
+	</head>
+	<body>
+	
+	</body>
+</html>
